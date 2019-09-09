@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("https://media1.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: 1366px 768px;
+  }
+  
+  header {
+    background-color: #4caf50;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  header h2 {
+    padding: 10px;
+    margin: 0;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  
+  div.card {
+    background-color: #eeeeee;
+    height: 250px;
+    width: 300px;
+    box-shadow: 10px 10px grey;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  p {
+    font-size: 1.5em;
+    color: black;
+    font-family: Helvetica;
+  }
+  
+  li {
+    font-size: 1.05em;
+    list-style: none;
+    padding-right: 20px;
+  }
+  
+  button {
+    font-size: .65em;
+    color: #fff;
+    background-color: green;
+    border-radius: 10px;
+  }
+  
+  button.release {
+    float: right;
+    background-color: #E1332D;
+  }
+  
+  @media only screen and (min-width: 500px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media only screen and (min-width: 850px) {
+    main {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+   }
+  
+  /* .modal {
+    display: none;
+    position: fixed; 
+    padding-top: 50px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    position: relative; 
+    background-color: white;
+    padding: 20px; 
+    margin: auto; 
+    width: 75%;  
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  .close-btn {
+    float: right; 
+    color: lightgray; 
+    font-size: 24px;  
+    font-weight: bold;
+  }
+  .close-btn:hover {
+    color: darkgray;
+  } */
+  /* @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  } */
+  
