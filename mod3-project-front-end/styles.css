@@ -8,6 +8,7 @@ body {
   
   header {
     background-color: #4caf50;
+    text-align: center;
     margin: 0 auto;
     height: 50px;
   }
@@ -26,13 +27,14 @@ body {
     padding-bottom: 30px;
   }
   
-  div.card {
-    background-color: #eeeeee;
-    height: 250px;
-    width: 300px;
-    box-shadow: 10px 10px grey;
-    padding: 10px;
-    border-radius: 10px;
+ 
+  .quiz-form {
+    background-color: white;
+    margin: 0 auto; 
+    opacity: 0.8;
+    color: black;
+    width: 340px;
+    
   }
   
   p {
