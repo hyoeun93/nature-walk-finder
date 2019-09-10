@@ -12,18 +12,16 @@ const likeBtn = document.querySelector('.like-btn')
 const detailsDiv = document.querySelector('.details-div')
 
 
-
-// console.log(enterYourName);
-
 enterYourName.addEventListener('submit', displayQuizForm)
 
-function displayQuizForm(event){
+function displayQuizForm(event){ 
   event.preventDefault()
   quizForm.innerHTML = `
   <h1>What paths in NYC do you want to take a walk? Take this quiz!</h1>
   <form class="solve-the-quiz">
     <h3>What would you like as far as difficulty?</h3>
     <select name="difficulty">
+    <option value="None"> Select </option> 
     <option value="one"> Level 1 </option>
     <option value="two"> Level 2 </option>
     <option value="three"> Level 3 </option>
@@ -34,7 +32,8 @@ function displayQuizForm(event){
 
 
     <h3>What kind of surface type do you prefer walking on?</h3>
-    <select name="difficulty">
+    <select name="surface_type">
+    <option value="None"> Select </option> 
     <option value="one"> Paved </option>
     <option value="two"> Grass </option>
     <option value="three"> Boardwalk </option>
@@ -44,7 +43,8 @@ function displayQuizForm(event){
   </select>
 
     <h3>What kind of landform are you looking for?</h3>
-    <select name="difficulty">
+    <select name="topography">
+    <option value="None"> Select </option> 
     <option value="one"> Sloped </option>
     <option value="two"> Wavy </option>
     <option value="three"> Level </option>
@@ -62,10 +62,10 @@ function displayQuizForm(event){
 //----------get paths on page with event listener and fetch-----------
 //fetch paths when submit button is clicked
 quizForm.addEventListener('click', function(event){
-event.preventDefault()
+  event.preventDefault()
   if(event.target.className === "qsubmit-btn"){
-    console.log(event.target)
-    //fetch paths
+    // debugger 
+    
     function getPaths() {
       return fetch(('http://localhost:3000/paths'))
       .then(res => res.json())
