@@ -15179,3 +15179,96 @@ Processing by PathsController#index as */*
 Completed 200 OK in 191ms (Views: 0.1ms | ActiveRecord: 8.4ms)
 
 
+Started GET "/" for ::1 at 2019-09-10 11:59:16 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (6.6ms)
+Completed 200 OK in 52ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 11:59:22 -0400
+Processing by PathsController#index as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/hyoeunlee/Desktop/mod3-project/mod3-project-back-end/app/models/path.rb:11: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/path.rb:11: syntax error, unexpected end-of-input, expecting end
+app/controllers/paths_controller.rb:3:in `index'
+Started GET "/paths" for ::1 at 2019-09-10 11:59:40 -0400
+Processing by PathsController#index as HTML
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 12:01:02 -0400
+Processing by PathsController#index as HTML
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `search' for #<Class:0x00007fc745661cc8>):
+  
+app/controllers/paths_controller.rb:3:in `index'
+Started GET "/paths" for ::1 at 2019-09-10 12:01:20 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (33.3ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 822ms (Views: 0.2ms | ActiveRecord: 35.8ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 12:08:29 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (105.2ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 1062ms (Views: 0.3ms | ActiveRecord: 106.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-10 12:08:33 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.3ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 12:08:38 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (35.2ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 758ms (Views: 1.6ms | ActiveRecord: 35.2ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 12:29:08 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (1.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/models/path.rb:8
+  [1m[36mCACHE Path Load (0.4ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/models/path.rb:8
+  [1m[36mCACHE Path Load (0.0ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/models/path.rb:8
+  [1m[36mPath Load (13.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE (difficulty) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mPath Load (2.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? LIMIT ?[0m  [["difficulty", 2], ["LIMIT", 11]]
+  ↳ app/models/path.rb:8
+Completed 500 Internal Server Error in 2798825ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 13:34:58 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `search'
+app/models/path.rb:8:in `search'
+app/controllers/paths_controller.rb:4:in `index'
+Processing by PathsController#index as HTML
+Completed 500 Internal Server Error in 5405ms (ActiveRecord: 0.0ms)
+
+
+  
