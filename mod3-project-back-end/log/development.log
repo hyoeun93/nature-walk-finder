@@ -16364,3 +16364,20 @@ Processing by PathsController#index as */*
 Completed 200 OK in 212ms (Views: 0.1ms | ActiveRecord: 18.9ms)
 
 
+Started GET "/paths" for ::1 at 2019-09-10 17:24:47 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/alyssafarina/mod3-project/mod3-project-back-end/app/controllers/paths_controller.rb:3: syntax error, unexpected <<
+<<<<<<< HEAD
+^~
+/Users/alyssafarina/mod3-project/mod3-project-back-end/app/controllers/paths_controller.rb:6: syntax error, unexpected ===, expecting end
+=======
+^~~
+/Users/alyssafarina/mod3-project/mod3-project-back-end/app/controllers/paths_controller.rb:8: syntax error, unexpected >>, expecting end
+>>>>>>> 7a50ca678b93ddf8609cb60...
+^~):
+  
+app/controllers/paths_controller.rb:3: syntax error, unexpected <<
+app/controllers/paths_controller.rb:6: syntax error, unexpected ===, expecting end
+app/controllers/paths_controller.rb:8: syntax error, unexpected >>, expecting end
