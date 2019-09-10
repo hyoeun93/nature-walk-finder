@@ -8,9 +8,12 @@ let closeBtn = document.querySelector(".close-btn")
 let solveQuiz = document.querySelector('.solve-this-quiz')
 let qSubmitButton = document.querySelector('.qsubmit-btn')
 let appContainer = document.querySelector('main')
+const likeBtn = document.querySelector('.like-btn')
+const detailsDiv = document.querySelector('.details-div')
 
 
-console.log(enterYourName);
+
+// console.log(enterYourName);
 
 enterYourName.addEventListener('submit', displayQuizForm)
 
@@ -25,7 +28,10 @@ function displayQuizForm(event){
     <option value="two"> Level 2 </option>
     <option value="three"> Level 3 </option>
     <option value="four"> Level 4 </option>
+    <input type="image" id="image" alt="Login" style="width:200px; style="height:200px;
+    src=" https://cdn.dribbble.com/users/159981/screenshots/1536035/tag.png"/>
   </select>
+
 
     <h3>What kind of surface type do you prefer walking on?</h3>
     <select name="difficulty">
@@ -33,6 +39,8 @@ function displayQuizForm(event){
     <option value="two"> Grass </option>
     <option value="three"> Boardwalk </option>
     <option value="four"> Wood Chips </option>
+
+    
   </select>
 
     <h3>What kind of landform are you looking for?</h3>
@@ -42,7 +50,7 @@ function displayQuizForm(event){
     <option value="three"> Level </option>
     <input type="image" id="image" alt="Login" style="width:150px; style="height:150px;
     src="https://previews.123rf.com/images/nyker/nyker1404/nyker140400165/28515091-walking-path-central-park-new-york-city.jpg"/>
-
+   
     </select>
   <br>
   <br>
@@ -51,78 +59,83 @@ function displayQuizForm(event){
   `
 }
 
-
-
+//----------get paths on page with event listener and fetch-----------
+//fetch paths when submit button is clicked
 quizForm.addEventListener('click', function(event){
-
+event.preventDefault()
   if(event.target.className === "qsubmit-btn"){
     console.log(event.target)
-    
+    //fetch paths
     function getPaths() {
       return fetch(('http://localhost:3000/paths'))
       .then(res => res.json())
+   
     }
      
-    
+    //once the paths are fetched, append them to the page
     getPaths()
     .then(json => {
+      quizForm.innerHTML = ""
       json.forEach(path => {
-        let pathCard = document.createElement('div')
-        pathCard.setAttribute('class', 'card')
-        pathCard.dataset.id = path.id
+        let pathDiv = document.createElement('div')
         
-        pathCard.innerHTML = renderCard(path)
+        // pathDetailsDiv.setAttribute('class', 'details-div')
+        // pathCard.dataset.id = path.id
         
+        pathDiv.innerHTML = `<data-id=${path.id}>
+                              <h2> Path Name: ${path.name}</h2>
+                              <h5>Difficulty Level: ${path.difficulty}</h5>
+                              <h5> Surface Type: ${path.surface_type} </h5>
+                              <h5> Does it have trail markers? ${path.trail_markers} </h5>
+                              <h5> Landform: ${path.topography}</h5>
+                              <img src="https://previews.123rf.com/images/nyker/nyker1404/nyker140400165/28515091-walking-path-central-park-new-york-city.jpg"style="width:150px; style="height:150px;/>
+                              <button class="like-btn"> Like </button>
+                              <button class="delete-btn"> Delete </button> 
+                              </div>`
+
         
-        appContainer.append(pathCard)
+        detailsDiv.append(pathDiv)
         
       })
     })
+//MAYBE MAKE THE 5 SUGGESTED PATHS COME BACK TO THE USER
+// AS AN AUTOMATIC CAROUSEL/SLIDESHOW TYPE THING
 
-    
-    
-    // fetch('http://localhost:3000/paths')
-    //   .then(response => response.json())
-    //   .then(paths => paths.forEach(path => {
-    //     let div = document.createElement('DIV')
-    //     div.className = "show-paths"
-    //     let ul = docoument.createElement('UL')
-    //     ul.innerHTML += `<ul class name="path-div" data-id=${path.id}>
-    //                       <h1> ${path.path_name} </h1>
-    //                       <p> ${path.difficulty}</p>
-    //                       <p> ${path.gen_topog}</p>
-    //                       </ul>`
-    //     div.appendChild(ul)
-
-    //   }))
+//------------like button event listener and fetch---------------  
+    document.addEventListener('click', function() {
+      if (event.target.className === "like-btn"){
+        //show a popup with a button that says "see map location"
+        // <button class="map-btn> Show Map </button> 
+        console.log(event.target)
+      }
+    })
   }
+
+  var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+ 
+ 
+  
 })
 
-// nameSubmitBtn.onclick = function(){
-//     modal.style.display = "block"
-//   }
-
-//   closeBtn.onclick = function(){
-//     modal.style.display = "none"
-//   }
-
-//   window.onclick = function(e){
-//       e.preventDefault();
-//     if(e.target == modal){
-//       modal.style.display = "none"
-//     }
-//   }
-
-
-
-//create EventListener
-
-
-//talk to a server using fetch(make a fetch get request to the paths show page)
-
-
-//LOGIC/DOM Manipulation
-
+//-----------delete button event listener and fetch------------
 })
 
 
