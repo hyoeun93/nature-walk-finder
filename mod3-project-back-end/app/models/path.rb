@@ -7,10 +7,11 @@ class Path < ApplicationRecord
         # byebug
         if search
             paths = Path.all
-            paths = paths.where(difficulty: search[":difficulty"])
-            paths = paths.where(surface_type: search[":surface_type"])
-            paths = paths.where(topography: search[":topography"])
-            return paths
+            paths = paths.where(difficulty: search["difficulty"])
+            paths = paths.where(surface_type: search["surface_type"])
+            paths = paths.where(topography: search["topography"])
+            # byebug
+            return paths.first(5)
         else  
             Path.all 
         end 

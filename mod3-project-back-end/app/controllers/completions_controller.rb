@@ -1,5 +1,5 @@
 class CompletionsController < ApplicationController
     def show
-        #when the user complete the quize, it will render recommended paths 
+        #when the user selects an option from recommended paths, the completion works
     end
 end

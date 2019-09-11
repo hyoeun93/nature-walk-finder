@@ -1,8 +1,9 @@
 class PathsController < ApplicationController
     def index
-        # byebug
         # paths = Path.all
-        @paths = Path.search(params[:path])
+        # byebug
+        @paths = Path.search(paths_params)
+        # byebug
         render json: @paths.to_json(except: [:created_at, :updated_at]) 
     end
 
@@ -13,5 +14,11 @@ class PathsController < ApplicationController
 
     def delete
     end 
+
+    private
+
+    def paths_params
+        params.require(:path).permit(:difficulty, :surface_type, :topography)
+    end
 
 end
