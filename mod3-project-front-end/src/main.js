@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //create variables
 const enterYourName = document.querySelector('.enter-your-name')
 const quizForm = document.querySelector('.quiz-form')
-// let modal = document.querySelector(".modal")
 let nameSubmitBtn = document.querySelector('.submit-btn')
 let closeBtn = document.querySelector(".close-btn")
 let solveQuiz = document.querySelector('.solve-this-quiz')
@@ -11,7 +10,7 @@ let appContainer = document.querySelector('main')
 const likeBtn = document.querySelector('.like-btn')
 const detailsDiv = document.querySelector('.details-div')
 
-
+//Add EventListener
 enterYourName.addEventListener('submit', displayQuizForm)
 
 function displayQuizForm(event){ 
@@ -20,7 +19,7 @@ function displayQuizForm(event){
   <h1>What paths in NYC do you want to take a walk? Take this quiz!</h1>
   <form class="solve-the-quiz">
     <h3>What would you like as far as difficulty?</h3>
-    <select name="difficulty">
+  <select name="difficulty">
     <option value="None"> Select </option> 
     <option value="one"> Level 1 </option>
     <option value="two"> Level 2 </option>

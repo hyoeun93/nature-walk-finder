@@ -1,5 +1,5 @@
 function check(){
-    let difficulty = document.quizForm.difficulty.valye
+    let difficulty = document.quizForm.difficulty.value
     let surfaceType = document.quizForm.surfaceType.value
     let landform = document.quizForm.landform.value
 

@@ -4,7 +4,7 @@ class Path < ApplicationRecord
     has_many :quizzes, through: :completions
 
     def self.search(search)
-        byebug
+        # byebug
         if search
             paths = Path.all
             paths = paths.where(difficulty: search[":difficulty"])

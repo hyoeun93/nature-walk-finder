@@ -16477,3 +16477,178 @@ Completed 500 Internal Server Error in 5405ms (ActiveRecord: 0.0ms)
 
   
 >>>>>>> hyoeun3
+Started GET "/paths" for ::1 at 2019-09-10 17:57:18 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as */*
+  [1m[36mPath Load (88.6ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 1296ms (Views: 0.5ms | ActiveRecord: 90.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 17:57:20 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (34.9ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 692ms (Views: 0.3ms | ActiveRecord: 34.9ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 17:57:20 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (24.4ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 675ms (Views: 0.1ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 17:57:21 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (22.5ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 924ms (Views: 1.0ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 17:57:54 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (338.2ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 1138ms (Views: 0.7ms | ActiveRecord: 338.2ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 17:57:56 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (15.0ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 788ms (Views: 0.1ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:02:10 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (324.2ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 985ms (Views: 2.4ms | ActiveRecord: 324.2ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:04:03 -0400
+Processing by PathsController#index as */*
+  [1m[36mPath Load (49.4ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 1213ms (Views: 0.2ms | ActiveRecord: 52.1ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:04:51 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as */*
+  [1m[36mPath Load (21.1ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 200 OK in 989ms (Views: 0.2ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:25:30 -0400
+Processing by PathsController#index as */*
+Completed 500 Internal Server Error in 243261ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:29:34 -0400
+  
+Processing by PathsController#index as */*
+SystemExit (exit):
+Completed 500 Internal Server Error in 3226ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+SystemExit (exit):
+(byebug):1:in `exit'
+(byebug):1:in `search'
+app/models/path.rb:8:in `search'
+app/controllers/paths_controller.rb:4:in `index'
+  
+(byebug):1:in `exit'
+(byebug):1:in `search'
+app/models/path.rb:8:in `search'
+app/controllers/paths_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2019-09-10 18:30:20 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (15.5ms)
+Completed 200 OK in 50ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 18:30:28 -0400
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (14.7ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:5
+Completed 500 Internal Server Error in 284079ms (Views: 0.2ms | ActiveRecord: 15.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/paths_controller.rb:7:in `index'
+Started GET "/paths" for ::1 at 2019-09-10 18:47:56 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as HTML
+Completed 500 Internal Server Error in 1716900ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 23:32:12 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/paths_controller.rb:5:in `index'
+Processing by PathsController#index as */*
+Completed 500 Internal Server Error in 77799ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 23:33:34 -0400
+Started GET "/paths" for ::1 at 2019-09-10 23:33:34 -0400
+Processing by PathsController#index as HTML
+Started GET "/paths" for ::1 at 2019-09-10 23:33:45 -0400
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/paths_controller.rb:5:in `index'
+Processing by PathsController#index as HTML
+Completed 500 Internal Server Error in 10705ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+Completed 500 Internal Server Error in 8410ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/paths_controller.rb:5:in `index'
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/paths_controller.rb:5:in `index'
+Processing by PathsController#index as */*
+  [1m[36mPath Load (183.5ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:6
+Completed 200 OK in 20522ms (Views: 1.5ms | ActiveRecord: 216.6ms)
+
+
+Started GET "/paths" for ::1 at 2019-09-10 23:34:49 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as HTML
+  [1m[36mPath Load (42.6ms)[0m  [1m[34mSELECT "paths".* FROM "paths"[0m
+  ↳ app/controllers/paths_controller.rb:6
+Completed 200 OK in 878ms (Views: 0.5ms | ActiveRecord: 59.4ms)
+
+
