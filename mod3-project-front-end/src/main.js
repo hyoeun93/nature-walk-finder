@@ -149,8 +149,18 @@ function showSlides() {
 })
 
 //-----------delete button event listener and fetch------------
+let detailsDiv = document.querySelector('.details-div')
+  detailsDiv.addEventListener('click', function(event) {
+    if (event.target.className === "delete-btn") {
+      const pathId = event.target.parentNode.dataset.id
 
+      fetch(`http://localhost:3000/paths/${pathId}`, {
+        method: 'DELETE'
+      })
+      event.target.parentNode.remove();
 
+    }
+  })
 
 
 
