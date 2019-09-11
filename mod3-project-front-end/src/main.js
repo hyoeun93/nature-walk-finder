@@ -78,7 +78,7 @@ function quizSubmitBtn(event){
     
 function pathList(paths) {
   quizForm.innerHTML = ""
-      paths.forEach(path => { 
+      paths.forEach(path => {  
         let pathDiv = document.createElement('div')
         // pathDetailsDiv.setAttribute('class', 'details-div')
         // pathCard.dataset.id = path.id
@@ -88,7 +88,8 @@ function pathList(paths) {
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
                               <h5> Landform: ${path.topography}</h5>
-                              <img src="https://previews.123rf.com/images/nyker/nyker1404/nyker140400165/28515091-walking-path-central-park-new-york-city.jpg"style="width:150px; style="height:150px;/>
+                              <h5> Longitude: ${path.longitude}</h5>
+                              <h5> Latitude: ${path.latitude}</h5>
                               <button class="like-btn"> Like </button>
                               <button class="delete-btn"> Delete </button> 
                               </div>`
@@ -110,7 +111,8 @@ function getPaths(dataset) {
         body: JSON.stringify(dataset)
       
     }).then(res => res.json())
-      .then(pathList)
+      .then(console.log)
+      
 }
      
 //------------like button event listener and fetch---------------  

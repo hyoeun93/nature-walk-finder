@@ -8,18 +8,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'rest-client'
 require 'JSON'
+
 path_data = RestClient.get('https://data.cityofnewyork.us/resource/vjbm-hsyr.json')
 path_array = JSON.parse(path_data)
 
 path_array.each do |path|
-    byebug
+    # byebug
     Path.create(
     name: path["park_name"],
     surface_type: path["surface"],
     topography: path["gen_topog"],
     trail_markers: path["trailmarkersinstalled"],
     difficulty: path["difficulty"],
-    coordinates:path["coordinates"][0][0]
+    longitude: path["shape"]["coordinates"][0][0][0],
+    latitude: path["shape"]["coordinates"][0][0][1]
     )
 end
 
