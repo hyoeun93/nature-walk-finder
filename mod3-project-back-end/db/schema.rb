@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_211059) do
+ActiveRecord::Schema.define(version: 2019_09_09_151308) do
 
   create_table "completions", force: :cascade do |t|
     t.integer "user_id"
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2019_09_11_211059) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "longitude"
-    t.string "latitude"
   end
 
   create_table "quizzes", force: :cascade do |t|

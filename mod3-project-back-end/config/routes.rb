@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   resources :paths, only: [:show, :destroy, :update]
   resources :completions
-  resources :paths, only: [:show, :destroy]
-  resources :completions, only: [:index]
   # resources :quizzes, :controller => "paths"
-  resources :users, only: [:index]
+  resources :users
 
   post '/path', to: 'paths#index', as: 'path_index' 
 

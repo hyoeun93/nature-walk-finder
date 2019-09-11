@@ -11,7 +11,7 @@ class Path < ApplicationRecord
             paths = paths.where(surface_type: search["surface_type"])
             paths = paths.where(topography: search["topography"])
             # byebug
-            return paths.limit(5)
+            return paths.first(5)
         else  
             Path.all 
         end 
