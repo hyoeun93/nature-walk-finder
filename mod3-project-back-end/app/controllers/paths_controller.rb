@@ -1,8 +1,9 @@
 class PathsController < ApplicationController
     def index
-        paths = Path.all
-        # paths = Path.search(params[:path])
-        render json: paths.to_json(except: [:created_at, :updated_at])
+        # byebug
+        # paths = Path.all
+        @paths = Path.search(params[:path])
+        render json: @paths.to_json(except: [:created_at, :updated_at]) 
     end
 
     def show
