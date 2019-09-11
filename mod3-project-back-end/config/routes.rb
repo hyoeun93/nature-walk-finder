@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :paths, only: [:show]
+  resources :paths, only: [:show, :destroy]
   resources :completions
   # resources :quizzes, :controller => "paths"
   resources :users

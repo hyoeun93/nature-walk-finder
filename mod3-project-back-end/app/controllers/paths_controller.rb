@@ -12,7 +12,9 @@ class PathsController < ApplicationController
         render json: path.to_json(except: [:created_at, :updated_at])
     end 
 
-    def delete
+    def destroy
+        path = Path.find_by(id: params[:id])
+
     end 
 
     private
