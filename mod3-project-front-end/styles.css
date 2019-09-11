@@ -46,6 +46,7 @@ body {
     grid-gap: 20px;
     padding-top: 10px;
     padding-bottom: 30px;
+    background-color: thistle;
     color: black;
     
   }
@@ -123,7 +124,7 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 5s ease;
 }
 
 .active, .dot:hover {
@@ -153,4 +154,8 @@ body {
   .prev, .next,.text {font-size: 11px}
 }
   
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+ }
   

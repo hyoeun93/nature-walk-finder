@@ -111,6 +111,8 @@ event.preventDefault()
     })
   }
 
+  //-----------DELETE BUTTON EVENT LISTENER AND FETCH REQUEST----------
+
   let slideIndex = 0;
 showSlides();
 
@@ -130,7 +132,6 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 2000); 
 }
- 
  
   
 })

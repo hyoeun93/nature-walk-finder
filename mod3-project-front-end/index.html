@@ -2,11 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-<<<<<<< HEAD
-    <title>Path Finder</title>
-=======
+   
     <title>Nature Walk Finder in NYC</title>
->>>>>>> hyoeun2
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -24,37 +21,30 @@
       <section>
       <div class="details-div"></div>
    
-    
-    <!-- 
-      <div class="modal">
-        <span class="close-btn">&times;</span> -->
+      <h1>Find a Park By Coordinates!</h1>
+      
+      <section>
+      <div id="googleMap" style="width:100%;height:400px;"></div>
+      
+      <script>
+        function myMap() {
+          let mapProp= {
+            center:new google.maps.LatLng(40.897934,-73.885948),
+            zoom:5,
+          };
+          let map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        </script>
+</section>
 
-          <!-- <h1>What paths in NYC do you want to take a walk? Take this quiz!</h1>
-          <form class="solve-the-quiz">
-            <h3>What would you like as far as difficulty?</h3>
-            <input type="radio" name="difficulty"> Difficulty Level : 1 <br>
-            <input type="radio" name="difficulty"> Difficulty Level : 2 <br>
-            <input type="radio" name="difficulty"> Difficulty Level : 3 <br>
-            <input type="radio" name="difficulty"> Difficulty Level : 4 <br>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_UILXKQ4oALr-YpHapfeFrmO6rfKK2Xg&callback=myMap"></script>
 
-            <h3>What kind of surface type do you prefer walking on?</h3>
-            <input type="radio" name="surface-type" > Dirt <br>
-            <input type="radio" name="surface-type"> Paved <br>
-            <input type="radio" name="surface-type"> Boardwalk <br>
-            <input type="radio" name="surface-type"> Grasses <br>
-            <input type="radio" name="surface-type"> Wood Chips <br>
-
-            <h3>What kind of landform are you looking for?</h3>
-            <input type="radio" name="landform"> Sloped <br>
-            <input type="radio" name="landform"> Wavy <br>
-            <input type="radio" name="landform"> Level <br><br>
-            <input type="submit" value="Submit" >
-          </form> -->
-      <!-- </div> -->
 
       
     </main>
-  <!-- </section>
+
+
+  </section>
   <br>
   <br>
   <br>
@@ -82,6 +72,7 @@
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
     
   </div>
+  <section></section>
   <br>
   
   <div style="text-align:center">
@@ -90,7 +81,9 @@
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
     
-    <section> -->
+  
+    
+    </script>
     <script src="./src/main.js"></script>
   </body>
 </html>
