@@ -21,14 +21,13 @@ function displayQuizForm(event){
   <h1>What paths in NYC do you want to take a walk? Take this quiz!</h1>
   <form class="solve-the-quiz">
     <h3>What would you like as far as difficulty?</h3>
+    
   <select name="difficulty">
     <option value="None"> Select </option> 
     <option value="1"> Level 1 </option>
     <option value="2"> Level 2 </option>
     <option value="3"> Level 3 </option>
     <option value="4"> Level 4 </option>
-    <input type="image" id="image" alt="Login" style="width:200px; style="height:200px;
-    src=" https://cdn.dribbble.com/users/159981/screenshots/1536035/tag.png"/>
   </select>
 
 
@@ -49,8 +48,7 @@ function displayQuizForm(event){
     <option value="Sloped"> Sloped </option>
     <option value="Wavy"> Wavy </option>
     <option value="Level"> Level </option>
-    <input type="image" id="image" alt="Login" style="width:150px; style="height:150px;
-    src="https://previews.123rf.com/images/nyker/nyker1404/nyker140400165/28515091-walking-path-central-park-new-york-city.jpg"/>
+   
    
     </select>
   <br>
@@ -88,7 +86,6 @@ function pathList(paths) {
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
                               <h5> Landform: ${path.topography}</h5>
-                              <img src="https://previews.123rf.com/images/nyker/nyker1404/nyker140400165/28515091-walking-path-central-park-new-york-city.jpg"style="width:150px; style="height:150px;/>
                               <button class="like-btn"> Like </button>
                               <button class="delete-btn"> Delete </button> 
                               </div>`
@@ -114,15 +111,38 @@ function getPaths(dataset) {
 }
      
 //------------like button event listener and fetch---------------  
-    document.addEventListener('click', function() {
-      if (event.target.className === "like-btn"){
-        //show a popup with a button that says "see map location"
-        // <button class="map-btn> Show Map </button> 
-        console.log(event.target)
-      }
-    })
-  
+   
 
+document.addEventListener('click', function() {
+  let likeButtonIsPressed = event.target.className === "like-btn"
+ 
+      if (likeButtonIsPressed){
+
+        let id = event.target.parentElement.dataset.id
+        let like = event.target.previousElementSibling
+        let likeCount = parseInt(event.target.previousElementSibling.innerText)
+        like.innerText = `${++likeCount} 💚`
+
+        fetch("http://localhost:3000/path/id", {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          "likes": likeCount
+        })
+  
+      })
+        .then(response => response.json())
+        .then(console.log)
+    }
+  })
+        // //show a popup with a button that says "see map location"
+        // // <button class="map-btn> Show Map </button> 
+        // likePath ++;
+        // alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
+        // console.log(event.target)
+     
   //-----------DELETE BUTTON EVENT LISTENER AND FETCH REQUEST----------
 
   let slideIndex = 0;
