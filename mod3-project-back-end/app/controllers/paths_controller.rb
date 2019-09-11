@@ -17,6 +17,23 @@ class PathsController < ApplicationController
 
     end 
 
+    def update
+        path = Path.find_by(id: params[:id])
+    end
+
+    def add_like
+        @path = Path.find(params[:id])
+        if @path.likes 
+            @path.likes += 1
+            @path.save
+        else
+            @path.likes = 1 
+            @path.save
+        end
+        redirect_to post_path(@path)
+    end
+
+
     private
 
     def paths_params
