@@ -12,12 +12,14 @@ path_data = RestClient.get('https://data.cityofnewyork.us/resource/vjbm-hsyr.jso
 path_array = JSON.parse(path_data)
 
 path_array.each do |path|
+    byebug
     Path.create(
     name: path["park_name"],
     surface_type: path["surface"],
     topography: path["gen_topog"],
     trail_markers: path["trailmarkersinstalled"],
-    difficulty: path["difficulty"]
+    difficulty: path["difficulty"],
+    coordinates:path["coordinates"][0][0]
     )
 end
 
