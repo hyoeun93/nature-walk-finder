@@ -77,8 +77,7 @@ function quizSubmitBtn(event){
     
 function pathList(paths) {
   quizForm.innerHTML = ""
-      paths.forEach(path => { 
-        
+      paths.forEach((path, idx) => { 
         let pathDiv = document.createElement('div')
         // pathDetailsDiv.setAttribute('class', 'details-div')
         // pathCard.dataset.id = path.id
@@ -88,24 +87,18 @@ function pathList(paths) {
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
                               <h5> Landform: ${path.topography}</h5>
-                              <section>
-                              <div id="googleMap" style="width:100%;height:400px;"></div>
-                              <script> function myMap() {
-                                let mapProp= {
-                                  center:new google.maps.LatLng(${path.longitude},${path.latitude}),
-                                  zoom:5,
-                                };
-                                let map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-                              </script>
-                              </section>
-                              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_UILXKQ4oALr-YpHapfeFrmO6rfKK2Xg&callback=myMap"></script>
+                    
+                              <div id="map${idx}" style="width:400px;height:400px;">
+                              </div>
+
                               <button class="like-btn"> Like </button>
                               <button class="delete-btn"> Delete </button> 
                               </div>`
         detailsDiv.append(pathDiv)
+        displayMap(path, idx)
+        // debugger
       })
 }
-   
 
 //talk to a server using a fetch request
 function getPaths(dataset) {
@@ -157,10 +150,10 @@ document.addEventListener('click', function() {
         // alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
         // console.log(event.target)
      
-  //-----------DELETE BUTTON EVENT LISTENER AND FETCH REQUEST----------
+  //Slide Images------------------------------------------------------------------------------------------------------
 
   let slideIndex = 0;
-showSlides();
+  showSlides();
 
 function showSlides() {
   let i;
@@ -180,7 +173,7 @@ function showSlides() {
 }
  
   
-})
+}) //closing of DOMContentLoaded function
 
 //-----------delete button event listener and fetch------------
 let detailsDiv = document.querySelector('.details-div')
@@ -194,10 +187,16 @@ let detailsDiv = document.querySelector('.details-div')
       event.target.parentNode.remove();
 
     }
-  })
+})
 
 
-
-
-
-    
+//Creating a map for each recommended path
+function displayMap(path, divId) {
+    let uluru = {lat: parseFloat(path.latitude), lng: parseFloat(path.longitude)}; 
+    let mapProp= {
+      center: new google.maps.LatLng(parseFloat(path.latitude), parseFloat(path.longitude)),
+      zoom: 10,
+    };
+    let map = new google.maps.Map(document.getElementById(`map${divId}`), mapProp);
+    let marker = new google.maps.Marker({position: uluru, map: map})
+}
