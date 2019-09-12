@@ -12,8 +12,10 @@ class Path < ApplicationRecord
             paths = paths.where(topography: search["topography"])
             # byebug
             return paths.first(5)
-        else  
-            Path.all 
+        else
+            Path.all
+             
         end 
-    end
+    end 
+    
 end
