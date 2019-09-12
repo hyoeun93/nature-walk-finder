@@ -6,6 +6,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Path.destroy_all
+
 require 'rest-client'
 require 'JSON'
 path_data = RestClient.get('https://data.cityofnewyork.us/resource/vjbm-hsyr.json')
@@ -17,7 +19,9 @@ path_array.each do |path|
     surface_type: path["surface"],
     topography: path["gen_topog"],
     trail_markers: path["trailmarkersinstalled"],
-    difficulty: path["difficulty"]
+    difficulty: path["difficulty"],
+    longitude: path["shape"]["coordinates"][0][0][0],
+    latitude: path["shape"]["coordinates"][0][0][1]
     )
 end
 

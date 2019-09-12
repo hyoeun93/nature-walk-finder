@@ -77,6 +77,7 @@ function quizSubmitBtn(event){
 function pathList(paths) {
   quizForm.innerHTML = ""
       paths.forEach(path => { 
+        
         let pathDiv = document.createElement('div')
         // pathDetailsDiv.setAttribute('class', 'details-div')
         // pathCard.dataset.id = path.id
@@ -86,6 +87,17 @@ function pathList(paths) {
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
                               <h5> Landform: ${path.topography}</h5>
+                              <section>
+                              <div id="googleMap" style="width:100%;height:400px;"></div>
+                              <script> function myMap() {
+                                let mapProp= {
+                                  center:new google.maps.LatLng(${path.longitude},${path.latitude}),
+                                  zoom:5,
+                                };
+                                let map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                              </script>
+                              </section>
+                              <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_UILXKQ4oALr-YpHapfeFrmO6rfKK2Xg&callback=myMap"></script>
                               <button class="like-btn"> Like </button>
                               <button class="delete-btn"> Delete </button> 
                               </div>`
@@ -123,7 +135,7 @@ document.addEventListener('click', function() {
         let likeCount = parseInt(event.target.previousElementSibling.innerText)
         like.innerText = `${++likeCount} 💚`
 
-        fetch("http://localhost:3000/path/id", {
+        fetch("http://localhost:3000/paths/id", {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -136,7 +148,8 @@ document.addEventListener('click', function() {
         .then(response => response.json())
         .then(console.log)
     }
-  })
+  
+})
         // //show a popup with a button that says "see map location"
         // // <button class="map-btn> Show Map </button> 
         // likePath ++;
