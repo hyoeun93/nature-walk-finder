@@ -67,11 +67,12 @@ body {
     padding-top: 10px;
     padding-bottom: 30px;
     background-color: thistle;
-    color: black;
-    
+    color: black; 
   }
 
-
+  .error{
+    text-align: center;
+  }
   
   
   button {

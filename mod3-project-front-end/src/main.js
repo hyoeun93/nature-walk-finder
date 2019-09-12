@@ -76,13 +76,15 @@ function quizSubmitBtn(event){
 } 
     
 function pathList(paths) {
+  // debugger 
+
   quizForm.innerHTML = ""
-      paths.forEach((path, idx) => { 
+  if (paths.length > 0) 
+       {
+      paths.forEach((path, idx) => {  
         let pathDiv = document.createElement('div')
-        // pathDetailsDiv.setAttribute('class', 'details-div')
-        // pathCard.dataset.id = path.id
-        pathDiv.innerHTML = `<data-id=${path.id}>
-                              <h2> Path Name: ${path.name}</h2>
+          pathDiv.innerHTML = `<data-id=${path.id}>
+                              <h2> Path Name: ${path.name} 🍃</h2>
                               <h5>Difficulty Level: ${path.difficulty}</h5>
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
@@ -96,8 +98,16 @@ function pathList(paths) {
                               </div>`
         detailsDiv.append(pathDiv)
         displayMap(path, idx)
+      
         // debugger
       })
+    }
+  else {
+    let errorDiv = document.createElement('div');
+    errorDiv.className = "error"
+    errorDiv.innerHTML = `<h3>Paths Not Found. Try Searching Again!</h3>`
+    detailsDiv.append(errorDiv)
+  }
 }
 
 //talk to a server using a fetch request
