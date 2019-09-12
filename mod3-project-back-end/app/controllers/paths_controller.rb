@@ -30,7 +30,7 @@ class PathsController < ApplicationController
             @path.likes = 1 
             @path.save
         end
-        redirect_to post_path(@path)
+        redirect_to path_path(@path)
     end
 
 
