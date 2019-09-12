@@ -118,37 +118,15 @@ function getPaths(dataset) {
      
 //------------like button event listener and fetch---------------  
    
-
 document.addEventListener('click', function() {
-  let likeButtonIsPressed = event.target.className === "like-btn"
- 
-      if (likeButtonIsPressed){
+  if (event.target.className === "like-btn"){
+    alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
 
-        let id = event.target.parentElement.dataset.id
-        let like = event.target.previousElementSibling
-        let likeCount = parseInt(event.target.previousElementSibling.innerText)
-        like.innerText = `${++likeCount} 💚`
-
-        fetch("http://localhost:3000/paths/id", {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          "likes": likeCount
-        })
-  
-      })
-        .then(response => response.json())
-        .then(console.log)
-    }
-  
+    console.log("")
+  }
 })
-        // //show a popup with a button that says "see map location"
-        // // <button class="map-btn> Show Map </button> 
-        // likePath ++;
-        // alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
-        // console.log(event.target)
+
+
      
   //Slide Images------------------------------------------------------------------------------------------------------
 
