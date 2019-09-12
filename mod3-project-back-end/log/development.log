@@ -20305,7 +20305,71 @@ Completed 204 No Content in 2ms (ActiveRecord: 0.3ms)
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Started PATCH "/path/id" for ::1 at 2019-09-11 17:20:20 -0400
+=======
+Started POST "/path" for ::1 at 2019-09-11 18:10:53 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level", "path"=>{"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level"}}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 1], ["surface_type", "Wood Chips"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 18:10:55 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 18:10:56 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/path" for ::1 at 2019-09-11 20:26:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level", "path"=>{"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level"}}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 1], ["surface_type", "Wood Chips"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 20:26:29 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 20:26:31 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 20:26:34 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-11 20:26:37 -0400
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
   
 ActionController::RoutingError (No route matches [PATCH] "/path/id"):
   
@@ -20331,6 +20395,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 =======
 >>>>>>> 541d7c0c86fa201ea76c5c0116a33012ec14a10f
 >>>>>>> d43ff31e1974974692822d933c9708719ed4878d
@@ -20377,6 +20442,26 @@ Completed 204 No Content in 2ms (ActiveRecord: 0.4ms)
 
 
 Started DELETE "/paths/undefined" for ::1 at 2019-09-11 18:13:37 -0400
+=======
+Started POST "/path" for ::1 at 2019-09-12 08:33:03 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"4", "surface_type"=>"Wood Chips", "topography"=>"Level", "path"=>{"difficulty"=>"4", "surface_type"=>"Wood Chips", "topography"=>"Level"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 4], ["surface_type", "Wood Chips"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:33:29 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level", "path"=>{"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 1], ["surface_type", "Wood Chips"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:33:31 -0400
 Processing by PathsController#destroy as */*
   Parameters: {"id"=>"undefined"}
   [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
@@ -20384,15 +20469,52 @@ Processing by PathsController#destroy as */*
 Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
 
 
-Started DELETE "/paths/undefined" for ::1 at 2019-09-11 18:13:39 -0400
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:33:36 -0400
 Processing by PathsController#destroy as */*
   Parameters: {"id"=>"undefined"}
-  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
   ↳ app/controllers/paths_controller.rb:16
-Completed 204 No Content in 2ms (ActiveRecord: 0.3ms)
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
 
 
-Started PATCH "/path/id" for ::1 at 2019-09-11 18:13:42 -0400
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:33:38 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLikesToPaths (20190912123516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "paths" ADD "likes" integer[0m
+  ↳ db/migrate/20190912123516_add_likes_to_paths.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190912123516"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/path" for ::1 at 2019-09-12 08:35:48 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"1", "surface_type"=>"Boardwalk", "topography"=>"Level", "path"=>{"difficulty"=>"1", "surface_type"=>"Boardwalk", "topography"=>"Level"}}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 1], ["surface_type", "Boardwalk"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:35:49 -0400
   
 ActionController::RoutingError (No route matches [PATCH] "/path/id"):
   
@@ -20418,6 +20540,158 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:35:50 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:35:50 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:36:13 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/path" for ::1 at 2019-09-12 08:40:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"2", "surface_type"=>"Paved", "topography"=>"Level", "path"=>{"difficulty"=>"2", "surface_type"=>"Paved", "topography"=>"Level"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 2], ["surface_type", "Paved"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 23ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:40:54 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:40:55 -0400
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+<<<<<<< HEAD
+Started DELETE "/paths/undefined" for ::1 at 2019-09-11 18:13:39 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-11 18:13:42 -0400
+=======
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:40:56 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:40:57 -0400
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/path" for ::1 at 2019-09-11 18:18:21 -0400
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /Users/hyoeunlee/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -20429,6 +20703,49 @@ Completed 200 OK in 88ms (Views: 0.4ms | ActiveRecord: 10.3ms)
 
 
 Started PATCH "/path/id" for ::1 at 2019-09-11 18:18:23 -0400
+=======
+Started POST "/path" for ::1 at 2019-09-12 08:42:09 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"2", "surface_type"=>"Grass", "topography"=>"Level", "path"=>{"difficulty"=>"2", "surface_type"=>"Grass", "topography"=>"Level"}}
+  [1m[36mPath Load (0.4ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 2], ["surface_type", "Grass"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:42:19 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"2", "surface_type"=>"Grass", "topography"=>"Sloped", "path"=>{"difficulty"=>"2", "surface_type"=>"Grass", "topography"=>"Sloped"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 2], ["surface_type", "Grass"], ["topography", "Sloped"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:42:30 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"2", "surface_type"=>"Boardwalk", "topography"=>"Level", "path"=>{"difficulty"=>"2", "surface_type"=>"Boardwalk", "topography"=>"Level"}}
+  [1m[36mPath Load (0.4ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 2], ["surface_type", "Boardwalk"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:44:42 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"3", "surface_type"=>"Wood Chips", "topography"=>"Sloped", "path"=>{"difficulty"=>"3", "surface_type"=>"Wood Chips", "topography"=>"Sloped"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 3], ["surface_type", "Wood Chips"], ["topography", "Sloped"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:45:27 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"3", "surface_type"=>"Wood Chips", "topography"=>"Sloped", "path"=>{"difficulty"=>"3", "surface_type"=>"Wood Chips", "topography"=>"Sloped"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 3], ["surface_type", "Wood Chips"], ["topography", "Sloped"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:46:08 -0400
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
   
 ActionController::RoutingError (No route matches [PATCH] "/path/id"):
   
@@ -20454,6 +20771,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/path" for ::1 at 2019-09-11 18:18:56 -0400
 Processing by PathsController#index as JSON
   Parameters: {"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level", "path"=>{"difficulty"=>"1", "surface_type"=>"Wood Chips", "topography"=>"Level"}}
@@ -50624,3 +50942,307 @@ Processing by PathsController#index as JSON
 Completed 200 OK in 42ms (Views: 6.2ms | ActiveRecord: 1.3ms)
 
 
+=======
+Started POST "/path" for ::1 at 2019-09-12 08:52:18 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Wavy", "path"=>{"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Wavy"}}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 3], ["surface_type", "Dirt"], ["topography", "Wavy"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:52:24 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:52:26 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:52:27 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-12 08:57:33 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/path" for ::1 at 2019-09-12 08:58:16 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Sloped", "path"=>{"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Sloped"}}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 3], ["surface_type", "Dirt"], ["topography", "Sloped"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 08:59:11 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"2", "surface_type"=>"Paved", "topography"=>"Level", "path"=>{"difficulty"=>"2", "surface_type"=>"Paved", "topography"=>"Level"}}
+  [1m[36mPath Load (0.5ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 2], ["surface_type", "Paved"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:59:50 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:59:51 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 08:59:52 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLikesToPaths (20190912123516)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apaths" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "difficulty" integer DEFAULT NULL, "surface_type" varchar DEFAULT NULL, "trail_markers" boolean DEFAULT NULL, "topography" varchar DEFAULT NULL, "img_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "likes" integer DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "apaths" ("id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at","likes")
+                     SELECT "id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at","likes" FROM "paths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "paths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "paths" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "difficulty" integer DEFAULT NULL, "surface_type" varchar DEFAULT NULL, "trail_markers" boolean DEFAULT NULL, "topography" varchar DEFAULT NULL, "img_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "paths" ("id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at")
+                     SELECT "id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at" FROM "apaths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "apaths"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190912123516"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLikesToPaths (20190912123516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "paths" ADD "likes" integer[0m
+  ↳ db/migrate/20190912123516_add_likes_to_paths.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190912123516"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLikesToPaths (20190912123516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apaths" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "difficulty" integer DEFAULT NULL, "surface_type" varchar DEFAULT NULL, "trail_markers" boolean DEFAULT NULL, "topography" varchar DEFAULT NULL, "img_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "likes" integer DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "apaths" ("id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at","likes")
+                     SELECT "id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at","likes" FROM "paths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "paths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "paths" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "difficulty" integer DEFAULT NULL, "surface_type" varchar DEFAULT NULL, "trail_markers" boolean DEFAULT NULL, "topography" varchar DEFAULT NULL, "img_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "paths" ("id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at")
+                     SELECT "id","name","difficulty","surface_type","trail_markers","topography","img_url","created_at","updated_at" FROM "apaths"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "apaths"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190912123516"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/path" for ::1 at 2019-09-12 09:02:12 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLikesToPaths (20190912123516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "paths" ADD "likes" integer[0m
+  ↳ db/migrate/20190912123516_add_likes_to_paths.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190912123516"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/path" for ::1 at 2019-09-12 09:03:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/alyssafarina/.rvm/gems/ruby-2.6.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"4", "surface_type"=>"Dirt", "topography"=>"None", "path"=>{"difficulty"=>"4", "surface_type"=>"Dirt", "topography"=>"None"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 4], ["surface_type", "Dirt"], ["topography", "None"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/path" for ::1 at 2019-09-12 09:03:21 -0400
+Processing by PathsController#index as JSON
+  Parameters: {"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Level", "path"=>{"difficulty"=>"3", "surface_type"=>"Dirt", "topography"=>"Level"}}
+  [1m[36mPath Load (0.3ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."difficulty" = ? AND "paths"."surface_type" = ? AND "paths"."topography" = ? ORDER BY "paths"."id" ASC LIMIT ?[0m  [["difficulty", 3], ["surface_type", "Dirt"], ["topography", "Level"], ["LIMIT", 5]]
+  ↳ app/models/path.rb:14
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 09:03:22 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.2ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paths/undefined" for ::1 at 2019-09-12 09:03:24 -0400
+Processing by PathsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mPath Load (0.1ms)[0m  [1m[34mSELECT  "paths".* FROM "paths" WHERE "paths"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/paths_controller.rb:16
+Completed 204 No Content in 1ms (ActiveRecord: 0.1ms)
+
+
+Started PATCH "/path/id" for ::1 at 2019-09-12 09:03:25 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/path/id"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158

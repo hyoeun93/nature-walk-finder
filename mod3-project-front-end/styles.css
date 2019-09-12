@@ -8,10 +8,20 @@ body {
  
   
   header {
-    background-color: #4caf50;
+    background-color: #09450b;
     text-align: center;
     margin: 0 auto;
     height: 50px;
+  }
+
+  .welcome {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: antiquewhite;
+  }
+
+  .audio {
+    background-color: #4caf50;
+    opacity: 0.1;
   }
   
   header h2 {
@@ -21,9 +31,9 @@ body {
   .submit-btn{
     position:absolute;
     bottom:0px;
-    right:25%;
+    right:50%;
     left:50%;
-    margin-left:-90px;
+    margin-left:-50px;
     opacity: 0.8;
     scroll-behavior: smooth;
   }

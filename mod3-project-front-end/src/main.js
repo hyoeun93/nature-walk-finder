@@ -34,6 +34,7 @@ function displayQuizForm(event){
     <h3>What kind of surface type do you prefer walking on?</h3>
     <select name="surface_type">
     <option value="None"> Select </option> 
+    <option value="Dirt"> Dirt </option>
     <option value="Paved"> Paved </option>
     <option value="Grass"> Grass </option>
     <option value="Boardwalk"> Boardwalk </option>

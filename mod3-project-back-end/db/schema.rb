@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_11_222325) do
+=======
+ActiveRecord::Schema.define(version: 2019_09_12_123516) do
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
 
   create_table "completions", force: :cascade do |t|
     t.integer "user_id"
@@ -29,8 +33,12 @@ ActiveRecord::Schema.define(version: 2019_09_11_222325) do
     t.string "img_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.decimal "longitude", precision: 10, scale: 6, default: "0.0", null: false
     t.decimal "latitude", precision: 10, scale: 6, default: "0.0", null: false
+=======
+    t.integer "likes"
+>>>>>>> 674e431788bd4cb489cea0b98d36b8c49959b158
   end
 
   create_table "quizzes", force: :cascade do |t|
