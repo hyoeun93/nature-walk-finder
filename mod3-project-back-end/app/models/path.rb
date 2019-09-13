@@ -11,11 +11,10 @@ class Path < ApplicationRecord
             paths = paths.where(surface_type: search["surface_type"])
             paths = paths.where(topography: search["topography"])
             # byebug
-            return paths.first(5)
+            return paths.sample(10)
         else
             Path.all
              
         end 
     end 
-    
 end
