@@ -9,12 +9,14 @@ let qSubmitButton = document.querySelector('.qsubmit-btn')
 let appContainer = document.querySelector('main')
 const likeBtn = document.querySelector('.like-btn')
 const detailsDiv = document.querySelector('.details-div')
-
+const likedPathsList = document.querySelector('.likedPaths-div')
 //Add EventListener
 enterYourName.addEventListener('submit', displayQuizForm)
 quizForm.addEventListener('submit', quizSubmitBtn)
+document.addEventListener('click', likeSaveBtn)
 
 //DOM Manipulation
+
 function displayQuizForm(event){ 
   event.preventDefault()
   quizForm.innerHTML = `
@@ -128,6 +130,7 @@ function getPaths(dataset) {
      
 //------------like button event listener and fetch---------------  
 
+<<<<<<< HEAD
   //  detailsDiv.addEventListener('click', function(event) {
   //    let likeButtonIsPressed = event.target.className === "like-btn"
 
@@ -156,15 +159,33 @@ function getPaths(dataset) {
 
 document.addEventListener('click', function() {
   if (event.target.className === "like-btn"){
+=======
+function likeSaveBtn(event) {
+  if(event.target.className === "like-btn") {
+>>>>>>> hyoeun10
     alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
 
     console.log("")
+    // debugger
+    let likedPathObject = event.target.parentNode 
+      listLikedPaths(likedPathObject)
   }
-})
+}
 
+function listLikedPaths(likedPathObject) {
+likedPathsList.append(likedPathObject); 
+}
+// document.addEventListener('click', function() {
+//   if (event.target.className === "like-btn"){
+//     alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
 
+//     console.log("")
+//   }
+// })
+
+}) //closing of DOMContentLoaded function
      
-  //Slide Images------------------------------------------------------------------------------------------------------
+//Slide Images------------------------------------------------------------------------------------------------------
 
   var slideIndex = 0;
   showSlides();
@@ -182,7 +203,7 @@ document.addEventListener('click', function() {
   }
  
   
-}) //closing of DOMContentLoaded function
+
 
 //-----------delete button event listener and fetch------------
 let detailsDiv = document.querySelector('.details-div')
@@ -199,7 +220,7 @@ let detailsDiv = document.querySelector('.details-div')
 })
 
 
-//Creating a map for each recommended path
+//---------------Creating a map for each recommended path----------
 function displayMap(path, divId) {
     let uluru = {lat: parseFloat(path.latitude), lng: parseFloat(path.longitude)}; 
     let mapProp= {
