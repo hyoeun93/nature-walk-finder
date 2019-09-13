@@ -117,7 +117,33 @@ function getPaths(dataset) {
 }
      
 //------------like button event listener and fetch---------------  
-   
+
+  //  detailsDiv.addEventListener('click', function(event) {
+  //    let likeButtonIsPressed = event.target.className === "like-btn"
+
+  //    if(likeButtonIsPressed) {
+  //     let id = event.target.parentElement.dataset.id
+  //     let like = event.target.previousElementSibling
+  //     let likeCount = parseInt(event.target.previousElementSibling.innerText)
+  //     like.innerText = `${++likeCount} likes`
+
+  //     fetch(`http://localhost:3000/paths/${id}`, {
+  //       method: 'PATCH',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         likes: likeCount
+  //       })
+  //     })
+  //     .then(response => response.json())
+  //    }
+     
+  //  })
+
+
+
+
 document.addEventListener('click', function() {
   if (event.target.className === "like-btn"){
     alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
@@ -130,25 +156,20 @@ document.addEventListener('click', function() {
      
   //Slide Images------------------------------------------------------------------------------------------------------
 
-  let slideIndex = 0;
+  var slideIndex = 0;
   showSlides();
-
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); 
-}
  
   
 }) //closing of DOMContentLoaded function
