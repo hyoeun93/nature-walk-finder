@@ -4,6 +4,7 @@ body {
     background-image: url("https://media1.giphy.com/media/xUA7b4arnbo3THfzi0/giphy.gif");
     background-repeat: no-repeat;
     background-size: 1366px 768px;
+    color: black;
   }
  
   
@@ -34,13 +35,16 @@ body {
     right:50%;
     left:50%;
     margin-left:-50px;
+    font-size: 28px;
     opacity: 0.8;
     scroll-behavior: smooth;
   }
   
   main {
-    background-color: rgb(183, 198, 168);
+    background-color: black;
     scroll-behavior: smooth;
+    
+   
   
   }
   
@@ -58,12 +62,13 @@ body {
   .qsubmit-btn{
     scroll-behavior: smooth;
   }
+
   .details-div{
     width: auto;
     height: auto;
     display: grid;
     grid-template-rows: auto;
-    grid-gap: 20px;
+    grid-gap: 40px;
     padding-top: 10px;
     padding-bottom: 30px;
     background-color: thistle;
