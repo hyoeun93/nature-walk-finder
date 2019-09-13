@@ -10,19 +10,12 @@ let appContainer = document.querySelector('main')
 const likeBtn = document.querySelector('.like-btn')
 const detailsDiv = document.querySelector('.details-div')
 const likedPathsList = document.querySelector('.likedPaths-div')
-
 //Add EventListener
 enterYourName.addEventListener('submit', displayQuizForm)
 quizForm.addEventListener('submit', quizSubmitBtn)
 document.addEventListener('click', likeSaveBtn)
 
 //DOM Manipulation
-
-function reRenderSearchBtn(event) {
-  if(event.target.className === 'back-to-search-btn') {
-    displayQuizForm
-  }
-}
 
 function displayQuizForm(event){ 
   event.preventDefault()
@@ -98,17 +91,18 @@ function pathList(paths) {
                               <h5> Surface Type: ${path.surface_type} </h5>
                               <h5> Does it have trail markers? ${path.trail_markers} </h5>
                               <h5> Landform: ${path.topography}</h5>
-                              <h5> Coordinates: Latitude: ${path.latitude},  Longitude: ${path.longitude}</h5>
+                    
                               <div id="map${idx}" style="width:400px;height:400px;">
                               </div>
+
                               <button class="like-btn"> Like </button>
                               <button class="delete-btn"> Delete </button> 
                               </div>`
         detailsDiv.append(pathDiv)
         displayMap(path, idx)
+      
         // debugger
       })
- 
     }
   else {
     let errorDiv = document.createElement('div');
@@ -134,6 +128,7 @@ function getPaths(dataset) {
       .then(pathList)
 }
      
+//------------like button event listener and fetch---------------  
 
 function likeSaveBtn(event) {
   if(event.target.className === "like-btn") {
@@ -149,28 +144,34 @@ function likeSaveBtn(event) {
 function listLikedPaths(likedPathObject) {
 likedPathsList.append(likedPathObject); 
 }
+// document.addEventListener('click', function() {
+//   if (event.target.className === "like-btn"){
+//     alert("You liked this path, glad it was a match 💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚💚 A few tips to help you on your way: 1. Get a good picture of the scenery 2. Take your dog for a walk, everyone loves dogs 3. Breathe in the fresh air 4. Be in the moment 5. In that moment, take a really good selfie !")
 
-//Slide Images------------------------------------------------------------------------------------------------------
-
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 3000); // Change image every 2 seconds
-}
-
+//     console.log("")
+//   }
+// })
 
 }) //closing of DOMContentLoaded function
      
+//Slide Images------------------------------------------------------------------------------------------------------
 
+  var slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 3000); // Change image every 2 seconds
+  }
+ 
+  
 
 
 //-----------delete button event listener and fetch------------
